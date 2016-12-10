@@ -1,4 +1,4 @@
-DATE: 2016-12-10 03:00:19
+DATE: 2016-12-10 03:00:34
 $$$$$$ sysctl dev.mps
 dev.mps.2.spinup_wait_time: 3
 dev.mps.2.chain_alloc_fail: 0
@@ -56,13 +56,13 @@ dev.mps.0.%driver: mps
 dev.mps.0.%desc: Avago Technologies (LSI) SAS2008
 dev.mps.%parent: 
 $$$$$$ netstat -m
-4093/6137/10230 mbufs in use (current/cache/total)
+4120/6110/10230 mbufs in use (current/cache/total)
 4092/3356/7448/786432 mbuf clusters in use (current/cache/total/max)
 4092/3349 mbuf+clusters out of packet secondary zone in use (current/cache)
 0/27/27/393216 4k (page size) jumbo clusters in use (current/cache/total/max)
 0/0/0/116508 9k jumbo clusters in use (current/cache/total/max)
 0/0/0/65536 16k jumbo clusters in use (current/cache/total/max)
-9207K/8354K/17561K bytes allocated to network (current/cache/total)
+9214K/8347K/17561K bytes allocated to network (current/cache/total)
 0/0/0 requests for mbufs denied (mbufs/clusters/mbuf+clusters)
 0/0/0 requests for mbufs delayed (mbufs/clusters/mbuf+clusters)
 0/0/0 requests for jumbo clusters delayed (4k/9k/16k)
@@ -89,31 +89,30 @@ ip6       10    256   flow  default   ---
 
 Workstreams:
 WSID CPU   Name     Len WMark   Disp'd  HDisp'd   QDrops   Queued  Handled
-   0   0   ip         0    16  1800447        0        0  7165807  8966248
+   0   0   ip         0    16  1800542        0        0  7165874  8966410
    0   0   igmp       0     0        0        0        0        0        0
    0   0   rtsock     0     2        0        0        0       13       13
-   0   0   arp        0     0     4870        0        0        0     4870
-   0   0   ether      0     0  1805712        0        0        0  1805712
+   0   0   arp        0     0     4871        0        0        0     4871
+   0   0   ether      0     0  1805808        0        0        0  1805808
    0   0   ip6        0     1      395        0        0      282      677
 $$$$$$ ps auwwx
 USER      PID  %CPU %MEM     VSZ     RSS TT  STAT STARTED       TIME COMMAND
-root       11 720.4  0.0       0     128  -  RL    2:38PM 5152:30.66 [idle]
-965     13450  80.7  7.9 5986728 5258028  -  SsJ   2:40PM  735:46.06 /usr/local/openjdk7/bin/java -Des.pidfile=/var/run/elasticsearch.pid -server -Xms5g -Xmx5g -Xss256k -Djava.awt.headless=true -XX:+UseParNewGC -XX:+UseConcMarkSweepGC -XX:CMSInitiatingOccupancyFraction=75 -XX:+UseCMSInitiatingOccupancyOnly -XX:+HeapDumpOnOutOfMemoryError -XX:+DisableExplicitGC -Delasticsearch -Des.config=/usr/local/etc/elasticsearch/elasticsearch.yml -cp /usr/local/lib/elasticsearch/elasticsearch-1.7.5.jar:/usr/local/lib/elasticsearch/*:/usr/local/lib/elasticsearch/sigar/* org.elasticsearch.bootstrap.Elasticsearch
-root     1062   0.1  0.0   87684   26292  -  S     2:38PM    1:13.93 /usr/local/sbin/snmpd -p /var/run/net_snmpd.pid -r
-root        0   0.0  0.0       0    8496  -  DLs   2:38PM   11:12.79 [kernel]
-root        1   0.0  0.0    9492     872  -  SLs   2:38PM    0:01.44 /sbin/init --
+root       11 711.1  0.0       0     128  -  RL    2:38PM 5154:17.42 [idle]
+965     13450  72.5  7.9 5986728 5258032  -  SsJ   2:40PM  735:59.57 /usr/local/openjdk7/bin/java -Des.pidfile=/var/run/elasticsearch.pid -server -Xms5g -Xmx5g -Xss256k -Djava.awt.headless=true -XX:+UseParNewGC -XX:+UseConcMarkSweepGC -XX:CMSInitiatingOccupancyFraction=75 -XX:+UseCMSInitiatingOccupancyOnly -XX:+HeapDumpOnOutOfMemoryError -XX:+DisableExplicitGC -Delasticsearch -Des.config=/usr/local/etc/elasticsearch/elasticsearch.yml -cp /usr/local/lib/elasticsearch/elasticsearch-1.7.5.jar:/usr/local/lib/elasticsearch/*:/usr/local/lib/elasticsearch/sigar/* org.elasticsearch.bootstrap.Elasticsearch
+root        0   0.0  0.0       0    8496  -  DLs   2:38PM   11:12.87 [kernel]
+root        1   0.0  0.0    9492     872  -  ILs   2:38PM    0:01.44 /sbin/init --
 root        2   0.0  0.0       0      16  -  DL    2:38PM    0:00.00 [crypto]
 root        3   0.0  0.0       0      16  -  DL    2:38PM    0:00.00 [crypto returns]
-root        4   0.0  0.0       0      48  -  DL    2:38PM    0:53.86 [cam]
-root        5   0.0  0.0       0     240  -  DL    2:38PM    0:34.61 [zfskern]
+root        4   0.0  0.0       0      48  -  DL    2:38PM    0:53.87 [cam]
+root        5   0.0  0.0       0     240  -  DL    2:38PM    0:34.62 [zfskern]
 root        6   0.0  0.0       0      16  -  DL    2:38PM    0:00.00 [sctp_iterator]
 root        7   0.0  0.0       0      16  -  DL    2:38PM    0:00.02 [enc_daemon0]
 root        8   0.0  0.0       0      16  -  DL    2:38PM    0:00.02 [enc_daemon1]
 root        9   0.0  0.0       0      32  -  DL    2:38PM    0:10.33 [pagedaemon]
 root       10   0.0  0.0       0      16  -  DL    2:38PM    0:00.00 [audit]
-root       12   0.0  0.0       0     704  -  WL    2:38PM    3:43.08 [intr]
+root       12   0.0  0.0       0     704  -  WL    2:38PM    3:43.10 [intr]
 root       13   0.0  0.0       0      48  -  DL    2:38PM    0:05.29 [geom]
-root       14   0.0  0.0       0      16  -  DL    2:38PM    0:15.67 [rand_harvestq]
+root       14   0.0  0.0       0      16  -  DL    2:38PM    0:15.68 [rand_harvestq]
 root       15   0.0  0.0       0     400  -  DL    2:38PM    0:05.68 [usb]
 root       16   0.0  0.0       0      16  -  DL    2:38PM    0:00.00 [vmdaemon]
 root       17   0.0  0.0       0      16  -  DL    2:38PM    0:00.00 [pagezero]
@@ -131,133 +130,134 @@ root       63   0.0  0.0       0      16  -  DL    2:38PM    0:00.00 [g_eli[6] m
 root       64   0.0  0.0       0      16  -  DL    2:38PM    0:00.00 [g_eli[7] mirror/swa]
 root      761   0.0  0.0   16744    2024  -  Is    2:38PM    0:00.00 /usr/sbin/moused -p /dev/ums0 -t auto -I /var/run/moused.ums0.pid
 root      783   0.0  0.0   16744    2048  -  Is    2:38PM    0:00.01 /usr/sbin/moused -p /dev/ums1 -t auto -I /var/run/moused.ums1.pid
-root      801   0.0  0.0   13628    4912  -  Is    2:38PM    0:00.01 /sbin/devd
+root      801   0.0  0.0   13628    4912  -  Ss    2:38PM    0:00.01 /sbin/devd
 root      894   0.0  0.0   14532    2000  -  Ss    2:38PM    0:04.13 /usr/sbin/syslogd -ss
-root     1056   0.0  0.0   35412    3572  -  Is    2:38PM    0:05.92 /usr/local/sbin/apcupsd --kill-on-powerfail
-root     1090   0.0  0.0   26128   18048  -  Ss    2:38PM    0:02.39 /usr/sbin/ntpd -c /etc/ntp.conf -L -p /var/run/ntpd.pid -f /var/db/ntpd.drift
+root     1056   0.0  0.0   35412    3572  -  Is    2:38PM    0:05.93 /usr/local/sbin/apcupsd --kill-on-powerfail
+root     1062   0.0  0.0   87684   26292  -  S     2:38PM    1:13.95 /usr/local/sbin/snmpd -p /var/run/net_snmpd.pid -r
+root     1090   0.0  0.0   26128   18048  -  Ss    2:38PM    0:02.40 /usr/sbin/ntpd -c /etc/ntp.conf -L -p /var/run/ntpd.pid -f /var/db/ntpd.drift
 root     1109   0.0  0.0   30764    5320  -  I     2:39PM    0:00.33 /usr/local/sbin/smartd --attributelog=/var/run/smartd/attrlog- -c /usr/local/etc/smartd.conf -p /var/run/smartd.pid
-root     1177   0.0  0.0   52664    6864  -  Ss    2:39PM    0:00.30 /usr/local/libexec/postfix/master -w
+root     1177   0.0  0.0   52664    6864  -  Is    2:39PM    0:00.30 /usr/local/libexec/postfix/master -w
 postfix  1179   0.0  0.0   54776    6848  -  I     2:39PM    0:00.08 qmgr -l -t unix -u
-root     1202   0.0  0.0   61316    6940  -  Is    2:39PM    0:00.07 /usr/sbin/sshd
+root     1202   0.0  0.0   61316    6940  -  Ss    2:39PM    0:00.07 /usr/sbin/sshd
 root     1306   0.0  0.0   14520    1928  -  SsJ   2:39PM    0:00.09 /usr/sbin/syslogd -ss
-bind     1319   0.0  0.1   84328   42424  -  SsJ   2:39PM    0:43.00 /usr/local/sbin/named -u bind -c /usr/local/etc/namedb/named.conf
+bind     1319   0.0  0.1   84328   42424  -  SsJ   2:39PM    0:43.01 /usr/local/sbin/named -u bind -c /usr/local/etc/namedb/named.conf
 136      1374   0.0  0.0   24932   15532  -  IsJ   2:39PM    0:00.02 /usr/local/sbin/dhcpd -q -cf /usr/local/etc/dhcpd.conf -lf /var/db/dhcpd/dhcpd.leases -pf /var/run/dhcpd/dhcpd.pid -user dhcpd -group dhcpd
-root     1445   0.0  0.0   52636    7376  -  IsJ   2:39PM    0:00.14 /usr/local/libexec/postfix/master -w
+root     1445   0.0  0.0   52636    7376  -  SsJ   2:39PM    0:00.14 /usr/local/libexec/postfix/master -w
 postfix  1447   0.0  0.0   54748    7380  -  IJ    2:39PM    0:00.08 qmgr -l -t unix -u
 nagios   1451   0.0  0.0   25808    4640  -  IsJ   2:39PM    0:00.20 /usr/local/sbin/nrpe2 -c /usr/local/etc/nrpe.cfg -d
 root     1473   0.0  0.0   61312    6440  -  IsJ   2:39PM    0:00.06 /usr/sbin/sshd
-root     1477   0.0  0.0   16624    2272  -  SsJ   2:39PM    0:00.08 /usr/sbin/cron -J 15 -s
-root     2153   0.0  0.0   14520    2036  -  SsJ   2:39PM    0:00.05 /usr/sbin/syslogd -ss
+root     1477   0.0  0.0   16624    2272  -  IsJ   2:39PM    0:00.08 /usr/sbin/cron -J 15 -s
+root     2153   0.0  0.0   14520    2036  -  IsJ   2:39PM    0:00.05 /usr/sbin/syslogd -ss
 root     2324   0.0  0.0   61312    6436  -  IsJ   2:39PM    0:00.00 /usr/sbin/sshd
-root     2361   0.0  0.0   16624    2220  -  SsJ   2:39PM    0:00.08 /usr/sbin/cron -J 15 -s
-root     2901   0.0  0.0   14528    2048  -  SsJ   2:39PM    0:00.10 /usr/sbin/syslogd -ss
+root     2361   0.0  0.0   16624    2220  -  IsJ   2:39PM    0:00.08 /usr/sbin/cron -J 15 -s
+root     2901   0.0  0.0   14528    2048  -  IsJ   2:39PM    0:00.10 /usr/sbin/syslogd -ss
 770      2962   0.0  0.0  203040   20072  -  IsJ   2:39PM    0:00.01 postgres: checkpointer process    (postgres)
 770      2963   0.0  0.0  203040   20024  -  SsJ   2:39PM    0:00.17 postgres: writer process    (postgres)
 770      2964   0.0  0.0  203040   20064  -  SsJ   2:39PM    0:00.16 postgres: wal writer process    (postgres)
-770      2965   0.0  0.0  203040   20600  -  SsJ   2:39PM    0:00.40 postgres: autovacuum launcher process    (postgres)
-770      2966   0.0  0.0   58032    9608  -  SsJ   2:39PM    0:00.99 postgres: stats collector process    (postgres)
-root     3034   0.0  0.0   52636    6788  -  SsJ   2:39PM    0:00.31 /usr/local/libexec/postfix/master -w
+770      2965   0.0  0.0  203040   20600  -  IsJ   2:39PM    0:00.40 postgres: autovacuum launcher process    (postgres)
+770      2966   0.0  0.0   58032    9608  -  IsJ   2:39PM    0:00.99 postgres: stats collector process    (postgres)
+root     3034   0.0  0.0   52636    6788  -  IsJ   2:39PM    0:00.31 /usr/local/libexec/postfix/master -w
 postfix  3036   0.0  0.0   54748    6792  -  IJ    2:39PM    0:00.07 qmgr -l -t unix -u
 nagios   3040   0.0  0.0   25808    4664  -  IsJ   2:39PM    0:00.18 /usr/local/sbin/nrpe2 -c /usr/local/etc/nrpe.cfg -d
 root     3063   0.0  0.0   61312    6440  -  IsJ   2:39PM    0:00.06 /usr/sbin/sshd
-root     3067   0.0  0.0   16624    2248  -  SsJ   2:39PM    0:00.08 /usr/sbin/cron -J 15 -s
-root     3738   0.0  0.0   14528    2048  -  SsJ   2:39PM    0:00.11 /usr/sbin/syslogd -ss
+root     3067   0.0  0.0   16624    2248  -  IsJ   2:39PM    0:00.08 /usr/sbin/cron -J 15 -s
+root     3738   0.0  0.0   14528    2048  -  IsJ   2:39PM    0:00.11 /usr/sbin/syslogd -ss
 7095     4213   0.0  0.0  184888   18120  -  IsJ   2:39PM    0:00.01 postgres: checkpointer process    (postgres)
 7095     4214   0.0  0.0  184888   18072  -  SsJ   2:39PM    0:00.18 postgres: writer process    (postgres)
 7095     4215   0.0  0.0  184888   18120  -  SsJ   2:39PM    0:00.17 postgres: wal writer process    (postgres)
-7095     4216   0.0  0.0  184888   18704  -  SsJ   2:39PM    0:00.39 postgres: autovacuum launcher process    (postgres)
-7095     4217   0.0  0.0   39864    7260  -  SsJ   2:39PM    0:00.99 postgres: stats collector process    (postgres)
-root     4285   0.0  0.0   52348    6716  -  SsJ   2:39PM    0:00.32 /usr/local/libexec/postfix/master -w
+7095     4216   0.0  0.0  184888   18704  -  IsJ   2:39PM    0:00.39 postgres: autovacuum launcher process    (postgres)
+7095     4217   0.0  0.0   39864    7260  -  IsJ   2:39PM    0:00.99 postgres: stats collector process    (postgres)
+root     4285   0.0  0.0   52348    6716  -  IsJ   2:39PM    0:00.32 /usr/local/libexec/postfix/master -w
 postfix  4287   0.0  0.0   54460    6716  -  IJ    2:39PM    0:00.07 qmgr -l -t unix -u
 nagios   4291   0.0  0.0   23384    4380  -  IsJ   2:39PM    0:00.17 /usr/local/sbin/nrpe2 -c /usr/local/etc/nrpe.cfg -d
 root     4314   0.0  0.0   61312    6436  -  IsJ   2:39PM    0:00.06 /usr/sbin/sshd
-root     4318   0.0  0.0   16624    2296  -  SsJ   2:39PM    0:00.08 /usr/sbin/cron -J 15 -s
-root     5322   0.0  0.0   14528    2048  -  SsJ   2:39PM    0:00.11 /usr/sbin/syslogd -ss
+root     4318   0.0  0.0   16624    2296  -  IsJ   2:39PM    0:00.08 /usr/sbin/cron -J 15 -s
+root     5322   0.0  0.0   14528    2048  -  IsJ   2:39PM    0:00.11 /usr/sbin/syslogd -ss
 7094     5596   0.0  0.0  184380   17904  -  IsJ   2:39PM    0:00.01 postgres: checkpointer process    (postgres)
 7094     5597   0.0  0.0  184380   17904  -  SsJ   2:39PM    0:00.18 postgres: writer process    (postgres)
 7094     5598   0.0  0.0  184380   17936  -  SsJ   2:39PM    0:00.17 postgres: wal writer process    (postgres)
-7094     5599   0.0  0.0  184380   18436  -  SsJ   2:39PM    0:00.37 postgres: autovacuum launcher process    (postgres)
-7094     5600   0.0  0.0   39516    7116  -  SsJ   2:39PM    0:01.05 postgres: stats collector process    (postgres)
-root     5668   0.0  0.0   52348    6724  -  SsJ   2:39PM    0:00.32 /usr/local/libexec/postfix/master -w
+7094     5599   0.0  0.0  184380   18436  -  IsJ   2:39PM    0:00.37 postgres: autovacuum launcher process    (postgres)
+7094     5600   0.0  0.0   39516    7116  -  IsJ   2:39PM    0:01.05 postgres: stats collector process    (postgres)
+root     5668   0.0  0.0   52348    6724  -  IsJ   2:39PM    0:00.32 /usr/local/libexec/postfix/master -w
 postfix  5670   0.0  0.0   54460    6696  -  IJ    2:39PM    0:00.08 qmgr -l -t unix -u
 nagios   5674   0.0  0.0   23384    4380  -  IsJ   2:39PM    0:00.17 /usr/local/sbin/nrpe2 -c /usr/local/etc/nrpe.cfg -d
 root     5697   0.0  0.0   61312    6440  -  IsJ   2:39PM    0:00.06 /usr/sbin/sshd
-root     5701   0.0  0.0   16624    2284  -  SsJ   2:39PM    0:00.08 /usr/sbin/cron -J 15 -s
+root     5701   0.0  0.0   16624    2284  -  IsJ   2:39PM    0:00.08 /usr/sbin/cron -J 15 -s
 root     6705   0.0  0.0   14520    2040  -  SsJ   2:39PM    0:00.10 /usr/sbin/syslogd -ss
 7093     7018   0.0  0.0  183600   17220  -  IsJ   2:39PM    0:00.01 postgres: checkpointer process    (postgres)
 7093     7019   0.0  0.0  183600   17220  -  SsJ   2:39PM    0:00.18 postgres: writer process    (postgres)
 7093     7020   0.0  0.0  183600   17220  -  SsJ   2:39PM    0:00.17 postgres: wal writer process    (postgres)
-7093     7021   0.0  0.0  183600   18156  -  SsJ   2:39PM    0:00.36 postgres: autovacuum launcher process    (postgres)
-7093     7022   0.0  0.0   39268    6860  -  SsJ   2:39PM    0:01.17 postgres: stats collector process    (postgres)
-root     7090   0.0  0.0   52348    6724  -  SsJ   2:39PM    0:00.32 /usr/local/libexec/postfix/master -w
+7093     7021   0.0  0.0  183600   18156  -  IsJ   2:39PM    0:00.36 postgres: autovacuum launcher process    (postgres)
+7093     7022   0.0  0.0   39268    6860  -  IsJ   2:39PM    0:01.17 postgres: stats collector process    (postgres)
+root     7090   0.0  0.0   52348    6724  -  IsJ   2:39PM    0:00.32 /usr/local/libexec/postfix/master -w
 postfix  7092   0.0  0.0   54460    6696  -  IJ    2:39PM    0:00.08 qmgr -l -t unix -u
 nagios   7096   0.0  0.0   23384    4380  -  IsJ   2:39PM    0:00.17 /usr/local/sbin/nrpe2 -c /usr/local/etc/nrpe.cfg -d
 root     7119   0.0  0.0   61312    6440  -  IsJ   2:39PM    0:00.06 /usr/sbin/sshd
-root     7123   0.0  0.0   16624    2284  -  SsJ   2:39PM    0:00.08 /usr/sbin/cron -J 15 -s
+root     7123   0.0  0.0   16624    2284  -  IsJ   2:39PM    0:00.08 /usr/sbin/cron -J 15 -s
 root     7317   0.0  0.0   86584    7520  -  Is    1:31AM    0:00.01 sshd: dan [priv] (sshd)
-dan      7319   0.0  0.0   86584    7628  -  S     1:31AM    0:00.01 sshd: dan@pts/7 (sshd)
+dan      7319   0.0  0.0   86584    7636  -  S     1:31AM    0:00.01 sshd: dan@pts/7 (sshd)
 root     8186   0.0  0.0   14520    2040  -  SsJ   2:39PM    0:00.11 /usr/sbin/syslogd -ss
 7092     8439   0.0  0.0   79672   11832  -  IsJ   2:39PM    0:00.01 postgres: checkpointer process    (postgres)
 7092     8440   0.0  0.0   79672   11832  -  SsJ   2:39PM    0:00.18 postgres: writer process    (postgres)
 7092     8441   0.0  0.0   79672   11832  -  SsJ   2:39PM    0:00.17 postgres: wal writer process    (postgres)
 7092     8442   0.0  0.0   79672   12820  -  SsJ   2:39PM    0:00.40 postgres: autovacuum launcher process    (postgres)
 7092     8443   0.0  0.0   39416    6808  -  SsJ   2:39PM    0:00.62 postgres: stats collector process    (postgres)
-root     8511   0.0  0.0   52348    6724  -  SsJ   2:39PM    0:00.32 /usr/local/libexec/postfix/master -w
+root     8511   0.0  0.0   52348    6724  -  IsJ   2:39PM    0:00.32 /usr/local/libexec/postfix/master -w
 postfix  8513   0.0  0.0   54460    6696  -  IJ    2:39PM    0:00.08 qmgr -l -t unix -u
 nagios   8517   0.0  0.0   23384    4380  -  IsJ   2:39PM    0:00.17 /usr/local/sbin/nrpe2 -c /usr/local/etc/nrpe.cfg -d
 root     8540   0.0  0.0   61312    6440  -  IsJ   2:39PM    0:00.06 /usr/sbin/sshd
-root     8544   0.0  0.0   16624    2296  -  SsJ   2:39PM    0:00.08 /usr/sbin/cron -J 15 -s
-root     9473   0.0  0.0   14528    2048  -  SsJ   2:39PM    0:00.10 /usr/sbin/syslogd -ss
-root     9914   0.0  0.0   52348    6616  -  SsJ   2:39PM    0:00.29 /usr/local/libexec/postfix/master -w
+root     8544   0.0  0.0   16624    2296  -  IsJ   2:39PM    0:00.08 /usr/sbin/cron -J 15 -s
+root     9473   0.0  0.0   14528    2048  -  IsJ   2:39PM    0:00.10 /usr/sbin/syslogd -ss
+root     9914   0.0  0.0   52348    6616  -  IsJ   2:39PM    0:00.29 /usr/local/libexec/postfix/master -w
 postfix  9916   0.0  0.0   54460    6584  -  IJ    2:39PM    0:00.08 qmgr -l -t unix -u
 nagios   9920   0.0  0.0   23384    4356  -  IsJ   2:39PM    0:00.16 /usr/local/sbin/nrpe2 -c /usr/local/etc/nrpe.cfg -d
 mysql    9927   0.0  0.0   17096    2468  -  IsJ   2:39PM    0:00.01 /bin/sh /usr/local/bin/mysqld_safe --defaults-extra-file=/var/db/mysql/my.cnf --user=mysql --datadir=/var/db/mysql --pid-file=/var/db/mysql/mysql56.int.unixathome.org.pid
 root    10053   0.0  0.0   61312    6440  -  IsJ   2:39PM    0:00.06 /usr/sbin/sshd
-root    10057   0.0  0.0   16624    2296  -  SsJ   2:39PM    0:00.08 /usr/sbin/cron -J 15 -s
+root    10057   0.0  0.0   16624    2296  -  IsJ   2:39PM    0:00.08 /usr/sbin/cron -J 15 -s
 mysql   10076   0.0  0.7  707220  495704  -  IJ    2:39PM    0:04.64 /usr/local/libexec/mysqld --defaults-extra-file=/var/db/mysql/my.cnf --basedir=/usr/local --datadir=/var/db/mysql --plugin-dir=/usr/local/lib/mysql/plugin --user=mysql --log-error=/var/db/mysql/mysql56.int.unixathome.org.err --pid-file=/var/db/mysql/mysql56.int.unixathome.org.pid
-root    11238   0.0  0.0   14520    2040  -  SsJ   2:39PM    0:00.10 /usr/sbin/syslogd -ss
-root    11469   0.0  0.0   52348    6656  -  SsJ   2:39PM    0:00.30 /usr/local/libexec/postfix/master -w
+root    11238   0.0  0.0   14520    2040  -  IsJ   2:39PM    0:00.10 /usr/sbin/syslogd -ss
+root    11469   0.0  0.0   52348    6656  -  IsJ   2:39PM    0:00.30 /usr/local/libexec/postfix/master -w
 postfix 11471   0.0  0.0   54460    6628  -  IJ    2:39PM    0:00.08 qmgr -l -t unix -u
 nagios  11475   0.0  0.0   23384    4356  -  IsJ   2:39PM    0:00.14 /usr/local/sbin/nrpe2 -c /usr/local/etc/nrpe.cfg -d
 mysql   11482   0.0  0.0   17096    2468  -  IsJ   2:39PM    0:00.01 /bin/sh /usr/local/bin/mysqld_safe --defaults-extra-file=/var/db/mysql/my.cnf --user=mysql --datadir=/var/db/mysql --pid-file=/var/db/mysql/mysql55.int.unixathome.org.pid
 mysql   11601   0.0  0.1  267476   79768  -  IJ    2:39PM    0:07.01 /usr/local/libexec/mysqld --defaults-extra-file=/var/db/mysql/my.cnf --basedir=/usr/local --datadir=/var/db/mysql --plugin-dir=/usr/local/lib/mysql/plugin --user=mysql --log-error=/var/db/mysql/mysql55.int.unixathome.org.err --pid-file=/var/db/mysql/mysql55.int.unixathome.org.pid
 root    11603   0.0  0.0   61312    6440  -  IsJ   2:39PM    0:00.07 /usr/sbin/sshd
-root    11607   0.0  0.0   16624    2296  -  SsJ   2:39PM    0:00.08 /usr/sbin/cron -J 15 -s
-root    12292   0.0  0.0   14520    2036  -  SsJ   2:39PM    0:00.05 /usr/sbin/syslogd -ss
+root    11607   0.0  0.0   16624    2296  -  IsJ   2:39PM    0:00.08 /usr/sbin/cron -J 15 -s
+root    12292   0.0  0.0   14520    2036  -  IsJ   2:39PM    0:00.05 /usr/sbin/syslogd -ss
 root    13199   0.0  0.0   52636    6668  -  SsJ   2:40PM    0:00.10 /usr/local/libexec/postfix/master -w
-postfix 13201   0.0  0.0   54748    6616  -  SJ    2:40PM    0:00.15 qmgr -l -t unix -u
+postfix 13201   0.0  0.0   54748    6616  -  IJ    2:40PM    0:00.15 qmgr -l -t unix -u
 root    13225   0.0  0.0   61312    6436  -  IsJ   2:40PM    0:00.00 /usr/sbin/sshd
-root    13229   0.0  0.0   16624    2268  -  SsJ   2:40PM    0:00.08 /usr/sbin/cron -J 15 -s
+root    13229   0.0  0.0   16624    2268  -  IsJ   2:40PM    0:00.08 /usr/sbin/cron -J 15 -s
 root    13408   0.0  0.0   14520    2040  -  SsJ   2:40PM    0:00.05 /usr/sbin/syslogd -ss
-root    13595   0.0  0.0   52636    6660  -  IsJ   2:40PM    0:00.10 /usr/local/libexec/postfix/master -w
+root    13595   0.0  0.0   52636    6660  -  SsJ   2:40PM    0:00.10 /usr/local/libexec/postfix/master -w
 postfix 13597   0.0  0.0   54748    6664  -  SJ    2:40PM    0:00.08 qmgr -l -t unix -u
 nagios  13601   0.0  0.0   25808    4660  -  IsJ   2:40PM    0:00.00 /usr/local/sbin/nrpe2 -c /usr/local/etc/nrpe.cfg -d
 root    13605   0.0  0.0   29324    7120  -  IsJ   2:40PM    0:00.00 nginx: master process /usr/local/sbin/nginx
 www     13606   0.0  0.0   29324    7564  -  IJ    2:40PM    0:00.00 nginx: worker process (nginx)
 root    13627   0.0  0.0   61312    6436  -  IsJ   2:40PM    0:00.00 /usr/sbin/sshd
-root    13631   0.0  0.0   16624    2252  -  SsJ   2:40PM    0:00.08 /usr/sbin/cron -J 15 -s
-root    14554   0.0  0.0   14520    2036  -  SsJ   2:40PM    0:00.06 /usr/sbin/syslogd -ss
-root    15031   0.0  0.0   52636    6668  -  IsJ   2:40PM    0:00.09 /usr/local/libexec/postfix/master -w
-postfix 15033   0.0  0.0   54748    6616  -  IJ    2:40PM    0:00.04 qmgr -l -t unix -u
+root    13631   0.0  0.0   16624    2252  -  IsJ   2:40PM    0:00.08 /usr/sbin/cron -J 15 -s
+root    14554   0.0  0.0   14520    2036  -  IsJ   2:40PM    0:00.06 /usr/sbin/syslogd -ss
+root    15031   0.0  0.0   52636    6668  -  SsJ   2:40PM    0:00.09 /usr/local/libexec/postfix/master -w
+postfix 15033   0.0  0.0   54748    6616  -  SJ    2:40PM    0:00.04 qmgr -l -t unix -u
 root    15107   0.0  0.0   61312    6552  -  IsJ   2:40PM    0:00.00 /usr/sbin/sshd
-root    15120   0.0  0.0   16624    2268  -  SsJ   2:40PM    0:00.08 /usr/sbin/cron -J 15 -s
-root    15331   0.0  0.0   14520    2052  -  SsJ   2:40PM    0:00.44 /usr/sbin/syslogd -ss
-10837   15388   0.0  0.0  184668   17952  -  IsJ   2:40PM    0:00.01 postgres: checkpointer process    (postgres)
+root    15120   0.0  0.0   16624    2268  -  IsJ   2:40PM    0:00.08 /usr/sbin/cron -J 15 -s
+root    15331   0.0  0.0   14520    2052  -  IsJ   2:40PM    0:00.44 /usr/sbin/syslogd -ss
+10837   15388   0.0  0.0  184668   17952  -  SsJ   2:40PM    0:00.01 postgres: checkpointer process    (postgres)
 10837   15389   0.0  0.0  184668   17952  -  SsJ   2:40PM    0:00.18 postgres: writer process    (postgres)
 10837   15390   0.0  0.0  184668   17984  -  SsJ   2:40PM    0:00.17 postgres: wal writer process    (postgres)
-10837   15391   0.0  0.0  184668   18484  -  SsJ   2:40PM    0:00.37 postgres: autovacuum launcher process    (postgres)
+10837   15391   0.0  0.0  184668   18484  -  IsJ   2:40PM    0:00.37 postgres: autovacuum launcher process    (postgres)
 10837   15392   0.0  0.0   39804    7160  -  SsJ   2:40PM    0:01.10 postgres: stats collector process    (postgres)
-root    15470   0.0  0.0   52636    6772  -  IsJ   2:40PM    0:00.30 /usr/local/libexec/postfix/master -w
-postfix 15472   0.0  0.0   54748    6744  -  IJ    2:40PM    0:00.08 qmgr -l -t unix -u
+root    15470   0.0  0.0   52636    6772  -  SsJ   2:40PM    0:00.30 /usr/local/libexec/postfix/master -w
+postfix 15472   0.0  0.0   54748    6744  -  SJ    2:40PM    0:00.08 qmgr -l -t unix -u
 nagios  15476   0.0  0.0   25808    4648  -  IsJ   2:40PM    0:00.30 /usr/local/sbin/nrpe2 -c /usr/local/etc/nrpe.cfg -d
 mysql   15483   0.0  0.0   17096    2468  -  IsJ   2:40PM    0:00.01 /bin/sh /usr/local/bin/mysqld_safe --defaults-extra-file=/var/db/mysql/my.cnf --user=mysql --datadir=/var/db/mysql --pid-file=/var/db/mysql/dbclone.int.unixathome.org.pid
-root    15526   0.0  0.0   59396    7216  -  SsJ   2:40PM    1:57.86 /usr/local/sbin/bacula-fd -u root -g wheel -v -c /usr/local/etc/bacula/bacula-fd.conf
-mysql   15605   0.0  0.7  698896  487232  -  IJ    2:40PM    0:04.47 /usr/local/libexec/mysqld --defaults-extra-file=/var/db/mysql/my.cnf --basedir=/usr/local --datadir=/var/db/mysql --plugin-dir=/usr/local/lib/mysql/plugin --user=mysql --log-error=/var/db/mysql/dbclone.int.unixathome.org.err --pid-file=/var/db/mysql/dbclone.int.unixathome.org.pid
+root    15526   0.0  0.0   59396    7216  -  IsJ   2:40PM    1:57.86 /usr/local/sbin/bacula-fd -u root -g wheel -v -c /usr/local/etc/bacula/bacula-fd.conf
+mysql   15605   0.0  0.7  698896  487232  -  IJ    2:40PM    0:04.48 /usr/local/libexec/mysqld --defaults-extra-file=/var/db/mysql/my.cnf --basedir=/usr/local --datadir=/var/db/mysql --plugin-dir=/usr/local/lib/mysql/plugin --user=mysql --log-error=/var/db/mysql/dbclone.int.unixathome.org.err --pid-file=/var/db/mysql/dbclone.int.unixathome.org.pid
 root    15607   0.0  0.0   61312    6552  -  IsJ   2:40PM    0:00.07 /usr/sbin/sshd
 root    15611   0.0  0.0   16624    2264  -  SsJ   2:40PM    0:00.08 /usr/sbin/cron -J 15 -s
 root    16168   0.0  0.0   14532    2052  -  SsJ   2:40PM    0:00.07 /usr/sbin/syslogd -ss
 nagios  16499   0.0  0.0   25816    4644  -  IsJ   2:40PM    0:00.08 /usr/local/sbin/nrpe2 -c /usr/local/etc/nrpe.cfg -d
-bacula  16503   0.0  0.0   46936    6916  -  SsJ   2:40PM    0:00.07 /usr/local/sbin/bacula-sd -u bacula -g bacula -v -c /usr/local/etc/bacula/bacula-sd.conf
+bacula  16503   0.0  0.0   46936    6916  -  IsJ   2:40PM    0:00.07 /usr/local/sbin/bacula-sd -u bacula -g bacula -v -c /usr/local/etc/bacula/bacula-sd.conf
 root    16506   0.0  0.0   50444    6368  -  SsJ   2:40PM    0:00.03 /usr/local/sbin/bacula-fd -u root -g wheel -v -c /usr/local/etc/bacula/bacula-fd.conf
 root    16526   0.0  0.0   61316    6556  -  IsJ   2:40PM    0:00.09 /usr/sbin/sshd
 root    17170   0.0  0.0  167928   13620  -  SsJ   2:40PM    0:00.78 /usr/local/sbin/httpd -DNOHTTPACCEPT
@@ -268,68 +268,70 @@ www     17214   0.0  0.0  167928   13632  -  IJ    2:40PM    0:00.00 /usr/local/
 www     17215   0.0  0.0  167928   13632  -  IJ    2:40PM    0:00.00 /usr/local/sbin/httpd -DNOHTTPACCEPT
 www     17216   0.0  0.0  167928   13632  -  IJ    2:40PM    0:00.00 /usr/local/sbin/httpd -DNOHTTPACCEPT
 root    17359   0.0  0.0   14520    2048  -  SsJ   2:40PM    0:00.22 /usr/sbin/syslogd -ss
-root    17491   0.0  0.0   52636    6660  -  SsJ   2:40PM    0:00.60 /usr/local/libexec/postfix/master -w
+root    17491   0.0  0.0   52636    6660  -  IsJ   2:40PM    0:00.60 /usr/local/libexec/postfix/master -w
 postfix 17493   0.0  0.0   54748    6752  -  IJ    2:40PM    0:00.23 qmgr -l -t unix -u
 nagios  17497   0.0  0.0   25808    4660  -  IsJ   2:40PM    0:00.10 /usr/local/sbin/nrpe2 -c /usr/local/etc/nrpe.cfg -d
 root    17529   0.0  0.0   61312    6556  -  IsJ   2:40PM    0:00.06 /usr/sbin/sshd
-root    17533   0.0  0.0   16624    2296  -  SsJ   2:40PM    0:00.08 /usr/sbin/cron -J 15 -s
+root    17533   0.0  0.0   16624    2296  -  IsJ   2:40PM    0:00.08 /usr/sbin/cron -J 15 -s
 postfix 17923   0.0  0.0   58920    8364  -  IJ    2:40PM    0:00.23 tlsmgr -l -t unix -u
-root    18589   0.0  0.0   14532    2052  -  SsJ   2:40PM    0:00.08 /usr/sbin/syslogd -ss
+root    18589   0.0  0.0   14532    2052  -  IsJ   2:40PM    0:00.08 /usr/sbin/syslogd -ss
 nagios  18842   0.0  0.0   25816    4644  -  IsJ   2:40PM    0:00.09 /usr/local/sbin/nrpe2 -c /usr/local/etc/nrpe.cfg -d
 bacula  18853   0.0  0.0   55260    9224  -  IsJ   2:40PM    1:34.57 /usr/local/sbin/bacula-sd -u bacula -g bacula -v -c /usr/local/etc/bacula/bacula-sd.conf
-root    18856   0.0  0.0   50444    6368  -  SsJ   2:40PM    0:00.03 /usr/local/sbin/bacula-fd -u root -g wheel -v -c /usr/local/etc/bacula/bacula-fd.conf
+root    18856   0.0  0.0   50444    6368  -  IsJ   2:40PM    0:00.03 /usr/local/sbin/bacula-fd -u root -g wheel -v -c /usr/local/etc/bacula/bacula-fd.conf
 root    18876   0.0  0.0   61316    6556  -  IsJ   2:40PM    0:00.06 /usr/sbin/sshd
 root    18907   0.0  0.0  167928   13620  -  SsJ   2:40PM    0:00.76 /usr/local/sbin/httpd -DNOHTTPACCEPT
-root    18913   0.0  0.0   16628    2204  -  SsJ   2:40PM    0:00.08 /usr/sbin/cron -J 15 -s
+root    18913   0.0  0.0   16628    2204  -  IsJ   2:40PM    0:00.08 /usr/sbin/cron -J 15 -s
 www     18952   0.0  0.0  167928   13632  -  IJ    2:40PM    0:00.00 /usr/local/sbin/httpd -DNOHTTPACCEPT
 www     18953   0.0  0.0  167928   13632  -  IJ    2:40PM    0:00.00 /usr/local/sbin/httpd -DNOHTTPACCEPT
 www     18954   0.0  0.0  167928   13632  -  IJ    2:40PM    0:00.00 /usr/local/sbin/httpd -DNOHTTPACCEPT
 www     18955   0.0  0.0  167928   13632  -  IJ    2:40PM    0:00.00 /usr/local/sbin/httpd -DNOHTTPACCEPT
 www     18956   0.0  0.0  167928   13632  -  IJ    2:40PM    0:00.00 /usr/local/sbin/httpd -DNOHTTPACCEPT
-root    19060   0.0  0.0   14520    2040  -  SsJ   2:40PM    0:00.06 /usr/sbin/syslogd -ss
-root    19275   0.0  0.0   52660    6492  -  SsJ   2:40PM    0:00.15 /usr/local/libexec/postfix/master -w
+root    19060   0.0  0.0   14520    2040  -  IsJ   2:40PM    0:00.06 /usr/sbin/syslogd -ss
+root    19275   0.0  0.0   52660    6492  -  IsJ   2:40PM    0:00.15 /usr/local/libexec/postfix/master -w
 postfix 19287   0.0  0.0   54772    6456  -  IJ    2:40PM    0:00.07 qmgr -l -t unix -u
 nagios  19303   0.0  0.0   25808    4660  -  IsJ   2:40PM    0:00.13 /usr/local/sbin/nrpe2 -c /usr/local/etc/nrpe.cfg -d
 root    19324   0.0  0.0   61312    6548  -  IsJ   2:40PM    0:00.06 /usr/sbin/sshd
-root    19328   0.0  0.0   16624    2272  -  SsJ   2:40PM    0:00.08 /usr/sbin/cron -J 15 -s
-root    26281   0.0  0.0   55180    6944  -  Ss    2:41PM    0:00.07 /usr/local/sbin/bacula-fd -u root -g wheel -v -c /usr/local/etc/bacula/bacula-fd.conf
-root    26321   0.0  0.0   16628    2356  -  Ss    2:41PM    0:00.08 /usr/sbin/cron -s
+root    19328   0.0  0.0   16624    2272  -  IsJ   2:40PM    0:00.08 /usr/sbin/cron -J 15 -s
+root    26281   0.0  0.0   55180    6944  -  Is    2:41PM    0:00.07 /usr/local/sbin/bacula-fd -u root -g wheel -v -c /usr/local/etc/bacula/bacula-fd.conf
+root    26321   0.0  0.0   16628    2356  -  Is    2:41PM    0:00.08 /usr/sbin/cron -s
 root    27817   0.0  0.0   86584    7452  -  Is    2:42PM    0:00.01 sshd: dan [priv] (sshd)
 dan     27819   0.0  0.0   86584    7520  -  I     2:42PM    0:00.08 sshd: dan@pts/0 (sshd)
-postfix 28353   0.0  0.0   54724    7860  -  S     2:10AM    0:00.01 pickup -l -t unix -u
+postfix 28353   0.0  0.0   54724    7860  -  I     2:10AM    0:00.01 pickup -l -t unix -u
 www     28440   0.0  0.0  167928   13764  -  IJ    2:45PM    0:00.03 /usr/local/sbin/httpd -DNOHTTPACCEPT
-postfix 29952   0.0  0.0   54696    7888  -  IJ    2:15AM    0:00.01 pickup -l -t unix -u
+postfix 29952   0.0  0.0   54696    7888  -  SJ    2:15AM    0:00.01 pickup -l -t unix -u
 postfix 31324   0.0  0.0   54696    7980  -  IJ    2:18AM    0:00.01 pickup -l -t unix -u
 postfix 31325   0.0  0.0   54408    7760  -  IJ    2:18AM    0:00.01 pickup -l -t unix -u
 postfix 31330   0.0  0.0   54408    7732  -  IJ    2:18AM    0:00.01 pickup -l -t unix -u
-postfix 31340   0.0  0.0   54408    7732  -  SJ    2:18AM    0:00.01 pickup -l -t unix -u
-postfix 31342   0.0  0.0   54408    7732  -  SJ    2:19AM    0:00.01 pickup -l -t unix -u
-postfix 31343   0.0  0.0   54408    7732  -  SJ    2:19AM    0:00.01 pickup -l -t unix -u
-postfix 31353   0.0  0.0   54408    7732  -  SJ    2:19AM    0:00.01 pickup -l -t unix -u
-postfix 31396   0.0  0.0   54696    7764  -  IJ    2:19AM    0:00.01 pickup -l -t unix -u
+postfix 31340   0.0  0.0   54408    7732  -  IJ    2:18AM    0:00.01 pickup -l -t unix -u
+postfix 31342   0.0  0.0   54408    7732  -  IJ    2:19AM    0:00.01 pickup -l -t unix -u
+postfix 31343   0.0  0.0   54408    7732  -  IJ    2:19AM    0:00.01 pickup -l -t unix -u
+postfix 31353   0.0  0.0   54408    7732  -  IJ    2:19AM    0:00.01 pickup -l -t unix -u
+postfix 31396   0.0  0.0   54696    7764  -  SJ    2:19AM    0:00.01 pickup -l -t unix -u
 postfix 31413   0.0  0.0   54696    7888  -  IJ    2:19AM    0:00.01 pickup -l -t unix -u
-postfix 31478   0.0  0.0   54696    8040  -  SJ    2:20AM    0:00.01 pickup -l -t unix -u
-postfix 31480   0.0  0.0   54720    7700  -  SJ    2:20AM    0:00.01 pickup -l -t unix -u
-postfix 31491   0.0  0.0   54696    6560  -  IJ    2:20AM    0:00.45 pickup -l -t unix -u
+postfix 31478   0.0  0.0   54696    8040  -  IJ    2:20AM    0:00.01 pickup -l -t unix -u
+postfix 31480   0.0  0.0   54720    7700  -  IJ    2:20AM    0:00.01 pickup -l -t unix -u
+postfix 31491   0.0  0.0   54696    6560  -  SJ    2:20AM    0:00.46 pickup -l -t unix -u
 postfix 31501   0.0  0.0   54696    6560  -  IJ    2:20AM    0:00.01 pickup -l -t unix -u
 postfix 42367   0.0  0.0   54696    8048  -  IJ    2:54AM    0:00.00 anvil -l -t unix -u
+root    44161   0.0  0.0   86584    7520  -  Ss    3:00AM    0:00.01 sshd: dan [priv] (sshd)
+dan     44163   0.0  0.0   86584    7536  -  S     3:00AM    0:00.00 sshd: dan@pts/8 (sshd)
 root    49087   0.0  0.0   86584    7452  -  Is    3:25PM    0:00.01 sshd: dan [priv] (sshd)
 dan     49089   0.0  0.0   86584    7532  -  S     3:25PM    0:04.40 sshd: dan@pts/1 (sshd)
-dan     49120   0.0  0.0   26020    4060  -  Ss    3:25PM    0:21.35 tmux: server (/tmp/tmux-1001/default) (tmux)
+dan     49120   0.0  0.0   26020    4060  -  Ss    3:25PM    0:21.36 tmux: server (/tmp/tmux-1001/default) (tmux)
 root    54184   0.0  0.0   86584    7540  -  Is    7:59PM    0:00.01 sshd: dan [priv] (sshd)
 dan     54186   0.0  0.0   86584    7580  -  I     7:59PM    0:00.00 sshd: dan@pts/4 (sshd)
 root    65788   0.0  0.0   86584    7540  -  Is    8:10PM    0:00.01 sshd: dan [priv] (sshd)
 dan     65790   0.0  0.0   86584    7612  -  S     8:10PM    0:00.47 sshd: dan@pts/5 (sshd)
 root    70006   0.0  0.0   86584    7540  -  Is   12:15AM    0:00.01 sshd: dan [priv] (sshd)
 dan     70008   0.0  0.0   86584    7736  -  S    12:15AM    0:01.34 sshd: dan@pts/3 (sshd)
-nagios  79334   0.0  0.0   25816    4964  -  Ss    4:47PM    0:01.54 /usr/local/sbin/nrpe2 -c /usr/local/etc/nrpe.cfg -d
-root     1104   0.0  0.0   51332   13388 v0- I     2:38PM    0:40.80 /usr/local/bin/logstash-forwarder -quiet=false -syslog=true -config=/usr/local/etc/logstash-forwarder.conf
-770      2960   0.0  0.0  203040   19936 v0- SJ    2:39PM    0:00.69 /usr/local/bin/postgres -D /var/db/postgres/data96
-7095     4097   0.0  0.0  184888   18024 v0- SJ    2:39PM    0:00.60 /usr/local/bin/postgres -D /usr/local/pgsql/data
-7094     5594   0.0  0.0  184380   17816 v0- SJ    2:39PM    0:00.63 /usr/local/bin/postgres -D /usr/local/pgsql/data
-7093     7008   0.0  0.0  183600   17136 v0- SJ    2:39PM    0:00.66 /usr/local/bin/postgres -D /usr/local/pgsql/data
+nagios  79334   0.0  0.0   25816    4964  -  Is    4:47PM    0:01.54 /usr/local/sbin/nrpe2 -c /usr/local/etc/nrpe.cfg -d
+root     1104   0.0  0.0   51332   13388 v0- S     2:38PM    0:40.82 /usr/local/bin/logstash-forwarder -quiet=false -syslog=true -config=/usr/local/etc/logstash-forwarder.conf
+770      2960   0.0  0.0  203040   19936 v0- IJ    2:39PM    0:00.69 /usr/local/bin/postgres -D /var/db/postgres/data96
+7095     4097   0.0  0.0  184888   18024 v0- IJ    2:39PM    0:00.60 /usr/local/bin/postgres -D /usr/local/pgsql/data
+7094     5594   0.0  0.0  184380   17816 v0- IJ    2:39PM    0:00.63 /usr/local/bin/postgres -D /usr/local/pgsql/data
+7093     7008   0.0  0.0  183600   17136 v0- IJ    2:39PM    0:00.66 /usr/local/bin/postgres -D /usr/local/pgsql/data
 7092     8437   0.0  0.0   79672   11696 v0- SJ    2:39PM    0:00.59 /usr/local/bin/postgres -D /usr/local/pgsql/data
-10837   15386   0.0  0.0  184668   17868 v0- SJ    2:40PM    0:00.68 /usr/local/bin/postgres -D /usr/local/pgsql/data
+10837   15386   0.0  0.0  184668   17868 v0- IJ    2:40PM    0:00.68 /usr/local/bin/postgres -D /usr/local/pgsql/data
 root    26397   0.0  0.0   14524    2092 v0  Is+   2:41PM    0:00.00 /usr/libexec/getty Pc ttyv0
 root    26398   0.0  0.0   14524    2092 v1  Is+   2:41PM    0:00.00 /usr/libexec/getty Pc ttyv1
 root    26399   0.0  0.0   14524    2092 v2  Is+   2:41PM    0:00.00 /usr/libexec/getty Pc ttyv2
@@ -348,26 +350,29 @@ dan     49090   0.0  0.0   17100    2740  1  Is    3:25PM    0:00.00 -sh (sh)
 dan     49117   0.0  0.0   26020    3644  1  I+    3:25PM    0:00.01 tmux: client (/tmp/tmux-1001/default) (tmux)
 dan     49121   0.0  0.0   17100    2752  2  Is    3:25PM    0:00.00 -sh (sh)
 dan     49123   0.0  0.0   17892    3768  2  I     3:25PM    0:00.00 bash
-dan     49406   0.0  0.0   30392    5024  2  S+    3:25PM    0:30.49 gstat -I 500000 -p
+dan     49406   0.0  0.0   30392    5024  2  S+    3:25PM    0:30.50 gstat -I 500000 -p
 dan     54187   0.0  0.0   17100    2740  4  Is    7:59PM    0:00.00 -sh (sh)
 dan     54188   0.0  0.0   17892    3720  4  I+    7:59PM    0:00.00 bash
 dan     65791   0.0  0.0   17100    2740  5  Is    8:10PM    0:00.00 -sh (sh)
 dan     65792   0.0  0.0   17892    3728  5  I     8:10PM    0:00.09 bash
 dan     71501   0.0  0.0   26020    3692  5  I+   12:20AM    0:00.00 tmux: client (/tmp/tmux-1001/default) (tmux)
-dan     44156   0.0  0.0   18772    2588  6  R+    3:00AM    0:00.00 ps auwwx
+dan     44172   0.0  0.0   18772    2592  6  R+    3:00AM    0:00.00 ps auwwx
 dan     71502   0.0  0.0   17100    2748  6  Is   12:20AM    0:00.00 -sh (sh)
 dan     71504   0.0  0.0   17892    3772  6  I    12:20AM    0:00.00 bash
 dan     72911   0.0  0.0   17100    2608  6  S+   12:22AM    0:00.70 /bin/sh /usr/home/dan/bin/gather_stats
 dan      7320   0.0  0.0   17100    2740  7  Is    1:31AM    0:00.00 -sh (sh)
-dan      7321   0.0  0.0   17892    3720  7  S+    1:31AM    0:00.01 bash
+dan      7321   0.0  0.0   17892    3720  7  S     1:31AM    0:00.01 bash
+dan     44159   0.0  0.0   12380    2508  7  S+    3:00AM    0:00.00 tail -F /tank_data/logging/everything.log
+dan     44164   0.0  0.0   17100    2740  8  Ss    3:00AM    0:00.00 -sh (sh)
+dan     44165   0.0  0.0   17892    3716  8  S+    3:00AM    0:00.00 bash
 $$$$$$ netstat -na
 Active Internet connections (including servers)
 Proto Recv-Q Send-Q Local Address          Foreign Address        (state)
-tcp4       0      0 10.55.0.74.57378       10.55.0.75.5043        CLOSE_WAIT
+tcp4       0      0 10.55.0.74.57321       10.55.0.75.5043        CLOSE_WAIT
+tcp4       0      0 10.55.0.74.22          10.8.1.90.60819        ESTABLISHED
 tcp4       0      0 10.55.0.74.5666        10.55.0.3.61885        TIME_WAIT
 tcp4       0      0 10.55.0.36.9103        10.55.0.4.61883        ESTABLISHED
-tcp4       0      0 10.55.0.74.5666        10.55.0.3.61879        TIME_WAIT
-tcp4       0      0 10.55.0.74.22          10.8.1.90.60680        ESTABLISHED
+tcp4       0  26060 10.55.0.74.22          10.8.1.90.60680        ESTABLISHED
 tcp4       0      0 10.55.0.74.22          10.55.0.60.52218       ESTABLISHED
 tcp4       0      0 10.55.0.74.22          10.55.0.60.61135       ESTABLISHED
 tcp4       0      0 10.55.0.74.22          10.55.0.60.60187       ESTABLISHED
@@ -547,6 +552,9 @@ udp4       0      0 *.161                  *.*
 icm4       0      0 *.*                    *.*                    
 Active UNIX domain sockets
 Address  Type   Recv-Q Send-Q    Inode     Conn     Refs  Nextref Addr
+fffff808d45d15a0 stream      0      0 fffff80f1ead33b0        0        0        0 /tmp/ssh-2LEDoS7Q6j/agent.44163
+fffff80917118c30 stream      0      0        0 fffff808a8f2d0f0        0        0
+fffff808a8f2d0f0 stream      0      0        0 fffff80917118c30        0        0
 fffff80030c49c30 stream      0      0 fffff80b2b73fb10        0        0        0 /tmp/ssh-5vfgbiyAaX/agent.7319
 fffff807a80ded20 stream      0      0        0 fffff8028096ae10        0        0
 fffff8028096ae10 stream      0      0        0 fffff807a80ded20        0        0
